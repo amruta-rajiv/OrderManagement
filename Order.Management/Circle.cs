@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,32 +6,14 @@ namespace Order.Management
 {
     class Circle : Shape
     {
-        public int circlePrice = 3;
-        public Circle(int red, int blue, int yellow)
+        public Circle(int redCircles, int blueCircles, int yellowCircles)
         {
             Name = "Circle";
-            base.Price = circlePrice;
-            AdditionalCharge = 1;
-            base.NumberOfRedShape = red;
-            base.NumberOfBlueShape = blue;
-            base.NumberOfYellowShape = yellow;
-        }
-        public override int Total()
-        {
-            return RedCirclesTotal() + BlueCirclesTotal() + YellowCirclesTotal();
+            UnitPrice = Constants.CircleUnitPrice;
+            NumberOfRedShapes = redCircles;
+            NumberOfBlueShapes = blueCircles;
+            NumberOfYellowShapes = yellowCircles;
         }
 
-        public int RedCirclesTotal()
-        {
-            return (base.NumberOfRedShape * Price);
-        }
-        public int BlueCirclesTotal()
-        {
-            return (base.NumberOfBlueShape * Price);
-        }
-        public int YellowCirclesTotal()
-        {
-            return (base.NumberOfYellowShape * Price);
-        }
     }
 }
